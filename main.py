@@ -33,14 +33,8 @@ def hello_world():
 @app.route('/api', methods=['GET'])
 def square():
     if not all(k in request.args for k in (["value"])):
-        # we can also print dynamically 
-        # using python f strings and with 
-        # html elements such as line breaks (<br>)
-        error_message =     f"\
-                            Required paremeters : 'value'\
-                            Supplied paremeters : {[k for k in request.args]}\
-                            "
-        return json.dumps(error_message), 400
+        supplied_parameters = f"{[k for k in request.args]}"
+        return json.dumps({"Required parameters" : value, "Supplied parameters" : supplied_parameters}), 400
     else:
         # assign and cast variable to int
         value = int(request.args['value'])
