@@ -16,7 +16,7 @@ description =   """
                 </head>
                 <body>  
                     <h3>A simple API using Flask</h3>
-                    <a href="http://localhost:5000/api?value=2">sample request</a>
+                    <p> Usage: http://<host_name>/api?value=2</p>
                 </body>
                 """
 				
@@ -37,10 +37,10 @@ def square():
         # using python f strings and with 
         # html elements such as line breaks (<br>)
         error_message =     f"\
-                            Required paremeters : 'value'<br>\
+                            Required paremeters : 'value'\
                             Supplied paremeters : {[k for k in request.args]}\
                             "
-        return error_message
+        return json.dumps(error_message), 400
     else:
         # assign and cast variable to int
         value = int(request.args['value'])
