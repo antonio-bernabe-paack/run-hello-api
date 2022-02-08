@@ -34,7 +34,7 @@ def hello_world():
 def square():
     if not all(k in request.args for k in (["value"])):
         supplied_parameters = f"{[k for k in request.args]}"
-        return json.dumps({"Required parameters" : value, "Supplied parameters" : supplied_parameters}), 400
+        return json.dumps({"Required parameters" : 'value', "Supplied parameters" : supplied_parameters}), 400
     else:
         # assign and cast variable to int
         value = int(request.args['value'])
