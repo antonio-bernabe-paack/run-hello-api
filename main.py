@@ -16,7 +16,7 @@ description =   """
                 </head>
                 <body>  
                     <h3>A simple API using Flask</h3>
-                    <p> Usage: http://<host_name>/api?value=2</p>
+                    <p> Usage: http://FQDN/api?value=2</p>
                 </body>
                 """
 				
