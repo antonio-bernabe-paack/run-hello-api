@@ -41,8 +41,8 @@ def square():
         # or use the built in get method and assign a type
         # http://werkzeug.palletsprojects.com/en/0.15.x/datastructures/#werkzeug.datastructures.MultiDict.get
         value = request.args.get('value', type=int)
-	secret = os.environ.get("RUN_HELLO_API_SECRET")
-	config = os.environ.get("RUN_HELLO_API_CONFIG")
+        secret = os.environ.get("RUN_HELLO_API_SECRET")
+        config = os.environ.get("RUN_HELLO_API_CONFIG")
         return json.dumps({"Value Squared" : value**2, "secret" : secret, "config" : config})
 
 if __name__ == "__main__":
